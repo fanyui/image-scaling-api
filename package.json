@@ -1,0 +1,40 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Image scaling resizing api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+    "lint": "eslint . --ext .ts",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanyui/image-scaling-api.git"
+  },
+  "keywords": [
+    "resize",
+    "image",
+    "scale",
+    "image",
+    "produce",
+    "thumbnail"
+  ],
+  "author": "Harisu Fanyui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanyui/image-scaling-api/issues"
+  },
+  "homepage": "https://github.com/fanyui/image-scaling-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
