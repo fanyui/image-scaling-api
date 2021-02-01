@@ -4,7 +4,9 @@
   "description": "Image scaling resizing api",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc -p ./src",
+    "start": "npm run build -- -w",
+    "test": "test",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write""
   },
