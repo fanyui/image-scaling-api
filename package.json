@@ -1,14 +1,16 @@
 {
+  "type": "module",
   "name": "workspace",
   "version": "1.0.0",
   "description": "Image scaling resizing api",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p ./src",
-    "start": "npm run build -- -w",
-    "test": "test",
+    "build": "tsc",
+    "start:prod": "npm run build && node server/index.js",
+    "start": "node src/index.ts",
+    "test": "jest",
     "lint": "eslint . --ext .ts",
-    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write""
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,12 @@
   },
   "homepage": "https://github.com/fanyui/image-scaling-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sharp": "^0.27.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.22",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",
