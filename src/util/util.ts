@@ -1,6 +1,7 @@
 import fs from 'fs';
+import { resolve } from 'path';
 const sharp = require('sharp');
-
+// const imageName="fjord"
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
 // returns the absolute path to the local image
@@ -8,16 +9,19 @@ const sharp = require('sharp');
 //    inputURL: string - a publicly accessible url to an image file
 // RETURNS
 //    an absolute path to a filtered image locally saved file
-export async function filterImageFromURL(inputURL: string, width: Number, height: Number ): Promise<string>{
+export async function filterImageFromURL(imageName: string, width: Number, height: Number ): Promise<string>{
+  const outpath = `/../../images/thumbnail/${imageName}${width}x${width}.jpg`;
+    if (fs.existsSync(__dirname+outpath)) {
+      resolve(__dirname+outpath)
+    }
+    else{
+      fs.mkdirSync(__dirname+"/../../images/thumbnail");
+    }
     return new Promise( async resolve => {
-      const outpath = '../images/resize.'+Math.floor(Math.random() * 2000)+'.jpg';
-
-        //strong type checking with jimp fails during generating build. so am ignoring it here.
         //@ts-ignore
-        await sharp('input.jpg')
+        await sharp(`${__dirname}/full/${imageName}.jpg`)
           .rotate()
           .resize(width, height)
-          .toBuffer()
           .toFile(__dirname+outpath, ()=>{
             resolve(__dirname+outpath);
         });

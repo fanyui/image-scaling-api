@@ -1,17 +1,14 @@
-import express, { Router, Request, Response } from 'express';
+import express from 'express';
 const app = express()
-const port = process.env.PORT || 3000
+
 import { IndexRouter } from './controller/index.router'
+import { ResizeRouter } from './controller/routes/resize.router';
+const port = process.env.PORT || 3000
 
 
 app.use('/',IndexRouter)
-app.get('/try', (req: Request, res: Response)=>{
-    console.log(" I received a request")
-    res.send("it worked.")
-})
-// app.listen(3000 => function(){
-//     console.log("app is listenting on port 3000", port)
-// })
-app.listen(3000, () => {
-    console.log('listening on port 3000')
+app.use('/resize',ResizeRouter)
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
 })

@@ -3,5 +3,8 @@ node_modules/*
 .workspace-config.json
 .tempfile
 .ipynb_checkpoints
-
+yarn.lock
+package-lock.json
 server/*
+*.DS_Store
+images/thumbnail/*
