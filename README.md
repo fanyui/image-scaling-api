@@ -60,9 +60,22 @@ For running the tests there is a script written to take care of that by jest fra
 yarn jest
 ```
 
-## Project Instructions
-
-This section should contain all the student deliverables for this project.
+## Project Instructions And running
+example request `http://localhost:3000/?image=encenadaport&width=400&height=500` 
+If you visit the endpoint with wrong parameters or without any, you will see the following
+```
+{
+"request": "try GET /?image=imageName&&width=100&&height=100 where image name is one of the following",
+    "imageName": [
+        "encenadaport",
+        "fjord",
+        "icelandwaterfall",
+        "palmtunnel",
+        "santamonica"
+    ]
+}
+```
+Which means you can substitute the imagename with any of the supported onces above.
 
 ## Built With
 
