@@ -1,8 +1,8 @@
-import fs from 'fs'
-import { resolve } from 'path'
+import fs from "fs"
+import { resolve } from "path"
 // import * as sharp from 'sharp'
-import sharp from 'sharp'
-import path from 'path'
+import sharp from "sharp"
+import path from "path"
 // const imageName="fjord"
 // filterImageFromURL
 // helper function to resized, filter, and save the filtered image locally based on width and height
@@ -27,7 +27,7 @@ async function filterImageFromURL(
     return new Promise(async (resolve) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
-        await sharp(`${__dirname}/full/${imageName}.jpg`)
+        await sharp(`${__dirname}/../../images/full/${imageName}.jpg`)
             .rotate()
             .resize(width, height)
             .toFile(__dirname + outpath, () => {

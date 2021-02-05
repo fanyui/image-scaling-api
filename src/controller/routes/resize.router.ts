@@ -39,9 +39,7 @@ router.get('/', async (req: Request, res: Response) => {
     }
     const file = await util.filterImageFromURL(imageName, width, height)
 
-    return res.sendFile(file, (e) => {
-        console.log('errors occure', e)
-    })
+    return res.sendFile(file)
 })
 
 export const ResizeRouter: Router = router
