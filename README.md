@@ -47,8 +47,7 @@ This create the build files in the folder called server
 
 
 ## Testing
-
-Explain the steps needed to run any automated tests
+Make sure that the server is not running as the test uses thesame port as the server which is 300 so if the server is running you might have a test failing.
 For running the tests there is a script written to take care of that by jest frame work. To do this you need to on thesame root level as the package.json file execute `yarn jest` This will run all the tests located in the __test__ folder
 
 ### Break Down Tests
